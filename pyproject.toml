@@ -1,0 +1,22 @@
+[project]
+authors = [{name = "JB Priez", email = "jbp@hyron.fr"}]
+name = "full-stack-exo"
+requires-python = ">= 3.11"
+version = "0.1.0"
+dependencies = [
+    "fastapi>=0.128.0,<0.129",
+    "uvicorn>=0.40.0,<0.41",
+]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+full_stack_exo = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+python = "3.11.*"
+go-task = ">=3.46.4,<4"

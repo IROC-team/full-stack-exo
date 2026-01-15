@@ -1,0 +1,23 @@
+version: '3'
+
+dotenv: ['.env']
+
+tasks:
+  run:
+    desc: Run the FastAPI server
+    cmd: uvicorn full_stack_exo.main:app --reload --port $PORT
+
+  request:
+    desc: Make a request to the hello endpoint with a name parameter
+    vars:
+      NAME: '{{default "World" .NAME}}'
+    cmd: curl -v "http://localhost:$PORT/hello/{{.NAME}}"
+
+  tests:
+    desc: Run the tests
+    silent: true
+    cmds:
+      - for:
+          var: TESTS
+          as: ITEMS
+        cmd: echo "{{ .ITEM }}"
