@@ -12,11 +12,6 @@ dependencies = [
 channels = ["conda-forge"]
 platforms = ["osx-arm64"]
 
-[tool.pixi.pypi-dependencies]
-full_stack_exo = { path = ".", editable = true }
-
-[tool.pixi.tasks]
-
 [tool.pixi.dependencies]
 python = "3.11.*"
 go-task = ">=3.46.4,<4"
